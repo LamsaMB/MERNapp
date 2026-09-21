@@ -1,5 +1,13 @@
+import Note from '../models/noteModel.js';
+
 export function getNotes(req, res) {
-    res.send('Hello from server piw');
+    try{
+        const notes = await Note.find();
+        res.status(200).json(notes);
+    }
+    catch(error){
+        res.status(500).json({message : error.message})
+    }
 }
 
 export function modifyNote(req, res) {
