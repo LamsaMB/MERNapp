@@ -1,4 +1,4 @@
-import moogose from 'mongoose';
+import mongoose from 'mongoose';
 //Note a moi même il faut toujours creer le schema avant de creer le model
 
 const noteSchema = mongoose.Schema(
@@ -15,6 +15,6 @@ const noteSchema = mongoose.Schema(
     {timestamps: true}
 )
 
-const Note = moogoose.model('Note', noteSchema);
+const Note = mongoose.model('Note', noteSchema);
 
 export default Note;
